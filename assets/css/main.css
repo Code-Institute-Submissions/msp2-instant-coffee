@@ -76,3 +76,7 @@ footer {
     color: #9B562D;
     text-decoration: none;
 }
+
+div#map {
+    min-height: 500px;
+}

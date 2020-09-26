@@ -23,6 +23,7 @@
                 <div class="col-2"></div>
                 <div class="col-8">
                     <ul class="d-inline navbar">
+                    <!--Need to center navlinks, will come back to this once I've spent some time getting Javasctipr in place.-->
                         <li class="list-inline-item">
                             <a href="index.html" class="navlink">Coffee Locator</a>
                         </li>
@@ -39,10 +40,21 @@
         </div>
     </header>
     <article class="main-content">
-    
+        <div>
+            <div class="row">
+                <div class="col-2"><!--Empty Col for spacing--></div>
+                <div class="col-8 locator">
+                    <div id="map">
+                    
+                    </div>                
+                </div>
+                <div class="col-2"><!--Empty Col for spacing--></div>
+            
+            </div>
+        </div>
     </article>
     <footer class="container-fluid">
-    <!--I've kept the footer pretty simple. Obviously the social media links don't lead to a dedicated 'WORDS AND PICTURES' page, just the home page for the respective site (and email should pop up and try to send an email to one of my email addresses I don't really use)-->
+    <!--Placeholder Footer for now - Basically copy & pasted code I used for MSP1, want to quickly get onto the Javascript part of the project because I want that to be where I spend my time, can edit if I have time toward the end.-->
         <div class="row">
             <div class="col-12">                
                 <ul id="contact-us">
@@ -77,5 +89,37 @@
             </div>
         </div>
     </footer>
+    <!-- <script>
+         function initMap() {
+            let map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 20,
+                center: {
+                    lat: 54.973978,
+                    lng: -1.613225
+                }
+            });
+        } 
+    </script> -->
+
+    <script>  
+    
+        function initMap() {
+            const localContextMapView = new google.maps.localContext.LocalContextMapView({
+                element: document.querySelector('#map'),
+                placeTypePreferences: ['restaurant'],
+                maxPlaceCount: 5,
+        });
+
+        localContextMapView.map.setOptions({
+            center: {lat: 54.973978,
+                    lng: -1.613225},
+            zoom: 20
+        });
+        }
+    </script>
+
+
+    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=localContext&v=beta&key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initMap"></script>
+
 </body>
 </html>
