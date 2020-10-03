@@ -43,6 +43,26 @@
         <div>
             <div class="row">
                 <div class="col-2"><!--Empty Col for spacing--></div>
+                <div class="col-8 enter-location">
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="type-location" aria-describedby="type location" placeholder="Type your Location">
+                            <input type="button" id="find-button" value="find" onclick="up206b"> <!--Make this nicer with Bootstrap or css button generator-->
+                            <!--The following function used and heavily relied* on this tutorial http://gis.yohman.com/up206b/tutorials/5-1/
+                            *by heavily relied on I probably mean totally ripped off, but I'm not sure I haven't done it yet-->
+                            <script>
+                               
+
+                            </script>
+                        </div>
+                    </form>
+                    <a href="/">Use My Location</a>
+                
+                </div>
+                <div class="col-2"><!--Empty Col for spacing--></div>
+            </div>
+            <div class="row">
+                <div class="col-2"><!--Empty Col for spacing--></div>
                 <div class="col-8 locator">
                     <div id="map">
                     
@@ -89,10 +109,18 @@
             </div>
         </div>
     </footer>
+ 
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="assets/js/locator.js"></script>
     <script>
-         function initMap() {
+
+        let up206b = {};
+        
+        let geocoder = new google.maps.Geocoder();
+                                
+        function initMap() {
             let map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 20,
+                zoom: 10,
                 center: {
                     lat: 54.973978,
                     lng: -1.613225
@@ -212,8 +240,27 @@
                 imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
             });
         }
-    </script> 
 
+        
+            up206b.geocode = function(){
+                let address = $('#type-location').val();
+                geocoder.geocode( { 'address': address}, function(results, status) {
+                if (status == google.maps.GeocoderStatus.OK) 
+                {
+                map.setCenter(results[0].geometry.location);
+                var marker = new google.maps.Marker({
+                    map: map, 
+                    position: results[0].geometry.location
+                });
+                } 
+                else 
+                {
+                alert("Geocode was not successful for the following reason: " + status);
+                }
+                });
+            }
+    </script> 
+ 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?libraries=localContext&v=beta&key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initMap"></script>
 
