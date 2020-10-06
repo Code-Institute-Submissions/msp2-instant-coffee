@@ -14,7 +14,7 @@ body{
 }
 
 .blue-background{
-    background-color: #97D5E0;
+    background-color: #ffffff;
 
 }
 
@@ -25,9 +25,9 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 2.4rem;
+    font-size: 2.5rem;
     padding-left: 10%;
-    color: #DDA985;
+    color: #8C6B4F;
     font-weight: 900;
 }
 

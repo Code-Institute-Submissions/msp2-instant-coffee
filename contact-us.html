@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-     <link rel="stylesheet" href="assets/css/main.css">
-     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <link rel="stylesheet" href="assets/css/contact-us.css">
+    <link rel="stylesheet" href="assets/css/main.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
     <script type="text/javascript">
         (function(){
             emailjs.init("user_MTg3ch7NQMZMJnsDOu0tw");   
@@ -18,34 +19,33 @@
     <header>
         <div class="blue-background">
             <div class="row">
-                <div class="col-4"><!--empty col for spacing--></div>
-                <div class="col-4">
+            <div class="col-2">
                     <img src="assets/images/coffee-1.2.jpg" alt="coffee-logo" class="logo">
                     <h1>Instant Coffee</h1>
                 </div>
-                <div class="col-4"><!--empty col for spacing--></div>
-            </div>
-            <div class="row">
-                <div class="col-2"></div>
-                <div class="col-8">
+                <div class="col-10">
                     <ul class="d-inline navbar">
                     <!--Need to center navlinks, will come back to this once I've spent some time getting Javasctipr in place.-->
-                        <li class="list-inline-item">
+                        <li class="list-inline-item list-nav">
                             <a href="index.html" class="navlink">Coffee Locator</a>
                         </li>
-                        <li class="list-inline-item">
+                        <li class="list-inline-item list-nav">
                             <a href="contact-us.html" class="navlink">Contact Us</a>
                         </li>
-                        <li class="list-inline-item">
+                        <li class="list-inline-item list-nav">
                             <a href="about-us.html" class="navlink">About</a>
                         </li>
                     </ul>
                 </div>
-                <div class="col-2"></div>
             </div>
         </div>
     </header>
     <article id="contact-form">
+    <div class="row">
+    <div class="col-2"></div>
+    <div class="col-8">
+        <h2 id="contact-head">Contact-us</h2>
+        <p>Do you have any feedback on the coffee locator experience? Want to tell us about a nice coffee shop you've ended up in? Or maybe you run a coffee shop that we've missed! Whatever the reason, you can get in touch with us by filling out the below: </p>
         <form onsubmit="return sendMail(this);">
             <div class="form-group">
                 <label for="name">Name</label>
@@ -63,9 +63,13 @@
                 <label for="message">Message</label>
                 <textarea class="form-control" id="message" rows="3"></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
+            <div class="btn-wrap">
+                <button type="submit" class="btn btn-primary submit-btn">Submit</button>
+            </div>
         </form>
-        
+    </div>
+    <div class="col-2"></div>
+    </div>        
     </article>
     <footer class="container-fluid">
     <!--Placeholder Footer for now - Basically copy & pasted code I used for MSP1, want to quickly get onto the Javascript part of the project because I want that to be where I spend my time, can edit if I have time toward the end.-->
