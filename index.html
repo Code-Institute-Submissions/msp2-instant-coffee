@@ -18,7 +18,7 @@
                 </div>
                 <div class="col-10">
                     <ul class="d-inline navbar">
-                    <!--Need to center navlinks, will come back to this once I've spent some time getting Javasctipr in place.-->
+                    <!--Need to center navlinks, will come back to this once I've spent some time getting Javasctip in place.-->
                         <li class="list-inline-item list-nav">
                             <a href="index.html" class="navlink">Coffee Locator</a>
                         </li>
@@ -38,18 +38,45 @@
             <div class="row">
                 <div class="col-2"><!--Empty Col for spacing--></div>
                 <div class="col-8 enter-location">
-                    <form>
-                        <div class="form-group">
-                            <input type="text" class="form-control" id="type-location" aria-describedby="type location" placeholder="Type your Location">
-                            <input type="button" id="find-button" value="find" onclick="up206b"> <!--Make this nicer with Bootstrap or css button generator-->
-                            <!--The following function used and heavily relied* on this tutorial http://gis.yohman.com/up206b/tutorials/5-1/
-                            *by heavily relied on I probably mean totally ripped off, but I'm not sure I haven't done it yet-->
-                        </div>
-                    </form>
-
-                    <button id="myBtn">Button!</button>
-                    <a href="#">Use My Location</a>
-                    
+                    <div id="welcome">
+                        <h2>Hello! I'm Instant Coffee, your Coffee shop locator</h2>
+                        <p>So, are you looking for a coffee shop?</p>
+                        <button id="yes">Yes</button>
+                        <button id="no">No</button>
+                    </div>
+                    <!--If Yes: -->
+                    <div id="search">
+                        <p>That's fantastic news!</p>
+                        <p>Now, just tell us where you are and we'll get to work finding one for you</p>
+                        <form>
+                            <div class="form-group">
+                                <input type="text" class="form-control" id="type-location" aria-describedby="type location" placeholder="Type your Location">
+                                <input type="button" id="find-button" value="find" onclick="up206b"> <!--Make this nicer with Bootstrap or css button generator-->
+                                <!--The following function used and heavily relied* on this tutorial http://gis.yohman.com/up206b/tutorials/5-1/
+                                *by heavily relied on I probably mean totally ripped off, but I'm not sure I haven't done it yet-->
+                            </div>
+                        </form>
+                        <button id="myBtn">Button!</button>
+                        <a href="#">Use My Location</a>
+                    </div>
+                    <!--If No:-->
+                    <div id="question-2">
+                        <p>...erm...</p>
+                        <p>Well...Do you want to get in touch with us to let us know something about a coffee shop? <br>This could be your own coffee shop (that we've shamefully missed), one you've visited and particularly enjoyed. But those are just suggestions, we're happy to read pretty much anything.</p>
+                        <button id="2-yes">Yes</button>
+                        <button id="2-no">No</button>
+                    </div>
+                    <!--If 2-yes:-->
+                    <div id="link-to-contact">
+                        <p>Brilliant! Then just click below to go to out contact page.</p>
+                        <button id="contact"><a href="contact-us.html">Contact Page</a></button>
+                    </div>
+                     <!--If 2-no:-->
+                     <div id="sorry">
+                        <p>Oh. Well then I'm not really sure what else I can do for you. I've kind of only got the one trick, sorry.</p>
+                        <p>If change your midn though and decide you absolutley <em>must</em> find a coffee shop, feel free to click below and we can get you sorted.</p>
+                        <button id="restart">I've changed my mind</button>
+                    </div>
                 </div>
                 <div class="col-2"><!--Empty Col for spacing--></div>
             </div>

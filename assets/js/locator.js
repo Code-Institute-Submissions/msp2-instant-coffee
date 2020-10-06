@@ -2,13 +2,44 @@
 //(I realised this has to go before the map, or the map doesn't hide - I'm also aware I can hide the map in CSS, but we're testing Javascript here!!!!). 
 
 
+    $("#search").hide();
+    $("#question-2").hide();
+    $("#link-to-contact").hide();
+    $("#sorry").hide();
+
+//If Yes to Q-1
+    $('#yes').on('click', function() {
+        $("#search").show();
+        $("#welcome").hide();
+    })
+
     $("#map").hide();
     $('#find-button').on('click', function() {
         $("#map").show();
     })
 
+//If no to Q-1
+    $('#no').on('click', function() {
+       $("#question-2").show();
+       $("#welcome").hide();
+    })
+//If yes to Q-2
+    $('#2-yes').on('click', function() {
+       $("#link-to-contact").show();
+       $("#question-2").hide();
+    })
 
+//If no to Q-2
+    $('#2-no').on('click', function() {
+       $("#sorry").show();
+       $("#question-2").hide();
+    })
 
+//If Restart
+     $('#restart').on('click', function() {
+       $("#welcome").show();
+       $("#sorry").hide();
+    })
 //Need to get the below working. It's to let you press 'Enter' in the search bar. https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_trigger_button_enter
 let enter = document.getElementById('type-location');
         enter.addEventListener("keyup", function(event) {
