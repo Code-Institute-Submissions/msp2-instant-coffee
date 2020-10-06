@@ -50,14 +50,12 @@
                             <input type="button" id="find-button" value="find" onclick="up206b"> <!--Make this nicer with Bootstrap or css button generator-->
                             <!--The following function used and heavily relied* on this tutorial http://gis.yohman.com/up206b/tutorials/5-1/
                             *by heavily relied on I probably mean totally ripped off, but I'm not sure I haven't done it yet-->
-                            <script>
-                               
-
-                            </script>
                         </div>
                     </form>
-                    <a href="/">Use My Location</a>
-                
+
+                    <button id="myBtn">Button!</button>
+                    <a href="#">Use My Location</a>
+                    
                 </div>
                 <div class="col-2"><!--Empty Col for spacing--></div>
             </div>
@@ -109,158 +107,75 @@
             </div>
         </div>
     </footer>
+
+<!--Test Modal, basic Bootstrap template - trying to get Marker 'on-click' function working-->
+    <div class="modal" tabindex="-1" role="dialog" id="myModal">
+        <!--I've ut the ticket booking in a pop up modal - Basically, I thought it would be good for it to just show up on the page, no matter what page a viewer was on. 
+        The basic layout for the Modal & the form within it was taken from Bootstrap, as well as influenced by the sign-up modal on the Code Institute Whiskey Drop tutorial
+        (but tweaked to be a ticket booking form)-->
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Book your tickets now!</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group">
+                            <label for="name">Name</label>
+                            <input type="text" class="form-control" id="name" aria-describedby="name">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" aria-describedby="email">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                        </div>
+                        <div class="form-group">
+                            <label>What day would you like tickets?</label>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ticket-type" id="saturday" value="saturday" checked>
+                                <label class="form-check-label" for="saturday">
+                                    Saturday (12/12/2020)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ticket-type" id="sunday" value="sunday">
+                                <label class="form-check-label" for="sunday">
+                                    Sunday (13/12/2020)
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="ticket-type" id="weekend" value="weekend">
+                                <label class="form-check-label" for="weekend">
+                                    Weekend Ticket (12/12/2020 - 13/12/2020)
+                                </label>
+                            </div>
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="terms">
+                            <label class="form-check-label" for="terms">
+                                By clicking this button you agree to our terms and conditions. You have to do this or you can't get tickets. 
+                            </label>
+                        </div>
+                            <button type="submit" class="btn myButton">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
  
-    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
-    <script src="assets/js/locator.js"></script>
     <script>
-
-        let up206b = {};
         
-        let geocoder = new google.maps.Geocoder();
-                                
-        function initMap() {
-            let map = new google.maps.Map(document.getElementById("map"), {
-                zoom: 10,
-                center: {
-                    lat: 54.973978,
-                    lng: -1.613225
-                }
+            $("#myBtn").click(function(){
+                $("#myModal").modal();
             });
-
-            let labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-
-            let locations = [
-                //North East
-                { lat: 55.671262, lng: -1.801049 },
-                { lat: 54.994902, lng: -1.605828 },
-                { lat: 54.986690, lng: -1.576851 },
-                { lat: 54.975140, lng: -1.612531 },
-                { lat: 54.976174, lng: -1.608318 },
-                { lat: 54.973158, lng: -1.608064 },
-                { lat: 54.971661, lng: -1.612712 },
-                { lat: 54.508650, lng: -1.353513 },
-                
-                //Cumbria etc
-                { lat: 54.508650, lng: -1.353513 },
-                { lat: 54.377713, lng: -2.906120 },
-                { lat: 54.377274, lng: -2.814145 },
-                { lat: 54.049218, lng: -2.802881 },
-                { lat: 54.049256, lng: -2.802413 },
-                { lat: 53.872840, lng: -2.389402 },
-                { lat: 53.879154, lng: -2.357658 },
-                { lat: 53.753997, lng: -2.361750 },
-                { lat: 53.747422, lng: -2.483861 },
-                { lat: 53.760124, lng: -2.697572 },
-                { lat: 53.757319, lng: -2.701515 },
-                { lat: 53.648704, lng: -2.317076 },
-                { lat: 53.479008, lng: -3.023117 },
-                { lat: 53.403720, lng: -2.982081 },
-                { lat: 53.402568, lng: -2.976352 },
-                { lat: 53.401643, lng: -2.970013 },
-                { lat: 53.423715, lng: -3.064382 },
-                { lat: 53.412316, lng: -3.051291 },
-                { lat: 53.416660, lng: -2.766256 },
-                { lat: 53.047751, lng: -2.995620 },
-                { lat: 53.326339, lng: -3.832241 },
-                { lat: 53.524012, lng: -2.492864 },
-
-                //Greater Manchester
-                { lat: 53.524012, lng: -2.492864 },
-                { lat: 53.482404, lng: -2.234001 },
-                { lat: 53.482664, lng: -2.235285 },
-                { lat: 53.484630, lng: -2.235886 },
-                { lat: 53.482940, lng: -2.246025 },
-                { lat: 53.481047, lng: -2.248874 },
-                { lat: 53.474249, lng: -2.248368 },
-                { lat: 53.473241, lng: -2.299898 },
-                { lat: 53.447484, lng: -2.291862 },
-                { lat: 53.391458, lng: -2.237584 },
-                { lat: 53.387755, lng: -2.351209 },
-
-                //North & West Yorkshire
-                { lat: 54.573861, lng: -1.235452 },
-                { lat: 54.282099, lng: -0.398634 },
-                { lat: 54.121175, lng: -1.191946 },
-                { lat: 53.961204, lng: -1.084948 },
-                { lat: 53.960775, lng: -1.085216 },
-                { lat: 53.960291, lng: -1.084643 },
-                { lat: 53.960350, lng: -1.079545 },
-                { lat: 53.958352, lng: -1.077916 },
-                { lat: 53.958501, lng: -1.078034 },
-                { lat: 53.997376, lng: -1.529658 },
-                { lat: 53.995273, lng: -1.538644 },
-                { lat: 53.993854, lng: -1.541916 },
-                { lat: 53.993085, lng: -1.545396 },
-                { lat: 54.071229, lng: -2.009590 },
-                { lat: 54.069449, lng: -2.283512 },
-                { lat: 53.961639, lng: -2.015063 },
-                { lat: 53.926304, lng: -1.820899 },
-                { lat: 53.905881, lng: -1.693948 },
-                { lat: 53.903263, lng: -1.690022 },
-                { lat: 53.835040, lng: -1.791734 },
-                { lat: 53.823623, lng: -1.578866 },
-                { lat: 53.826568, lng: -1.534630 },
-                { lat: 53.801004, lng: -1.550383 },
-                { lat: 53.798115, lng: -1.547495 },
-                { lat: 53.799002, lng: -1.541744 },
-                { lat: 53.798146, lng: -1.547212 },
-                { lat: 53.795471, lng: -1.545054 },
-                { lat: 53.793610, lng: -1.548380 },
-                { lat: 53.791657, lng: -1.552947 },
-                { lat: 53.791398, lng: -1.537144 },
-                { lat: 53.647745, lng: -1.781266 },
-                { lat: 53.647159, lng: -1.781329 },
-                { lat: 53.621275, lng: -1.885280 },
-                { lat: 53.569765, lng: -1.789023 },
-
-                //South & East Yorkshire
-                { lat: 54.082697, lng: -0.191764 },
-                { lat: 53.743182, lng: -0.337417 },
-                { lat: 53.742474, lng: -0.333668 },
-                { lat: 53.739130, lng: -0.335426 },
-                { lat: 53.392876, lng: -1.475659 },
-                { lat: 53.380577, lng: -1.476201 },
-                { lat: 53.381213, lng: -1.467701 },
-                { lat: 53.377431, lng: -1.467195 },
-                { lat: 53.230442, lng: -0.539333 },
-                { lat: 53.229315, lng: -0.540370 }
-
-
-                
-                ];
-
-            let markers = locations.map(function(location, i){
-                return new google.maps.Marker({
-                    position: location, 
-                    label: labels[i % labels.length]
-                });
-            });
-
-             let markerCluster = new MarkerClusterer(map, markers, {
-                imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-            });
-        }
-
         
-            up206b.geocode = function(){
-                let address = $('#type-location').val();
-                geocoder.geocode( { 'address': address}, function(results, status) {
-                if (status == google.maps.GeocoderStatus.OK) 
-                {
-                map.setCenter(results[0].geometry.location);
-                var marker = new google.maps.Marker({
-                    map: map, 
-                    position: results[0].geometry.location
-                });
-                } 
-                else 
-                {
-                alert("Geocode was not successful for the following reason: " + status);
-                }
-                });
-            }
-    </script> 
- 
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="assets/js/locator.js"></script> 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script defer src="https://maps.googleapis.com/maps/api/js?libraries=localContext&v=beta&key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initMap"></script>
 

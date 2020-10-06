@@ -6,6 +6,12 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
      <link rel="stylesheet" href="assets/css/main.css">
+     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function(){
+            emailjs.init("user_MTg3ch7NQMZMJnsDOu0tw");   
+        })();
+    </script>
     <title>Instant Coffee | Indy Coffee Shop Locator</title>
 </head>
 <body>
@@ -39,8 +45,27 @@
             </div>
         </div>
     </header>
-    <article class="main-content">
-    
+    <article id="contact-form">
+        <form onsubmit="return sendMail(this);">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" placeholder="Tell us your name......">
+            </div>
+            <div class="form-group">
+                <label for="company">Company (Optional)</label>
+                <input type="text" class="form-control" id="company" placeholder="Are you emailing on behalf of a company?">
+            </div>
+            <div class="form-group">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control" id="email" placeholder="Email Address">
+            </div>
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea class="form-control" id="message" rows="3"></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+        </form>
+        
     </article>
     <footer class="container-fluid">
     <!--Placeholder Footer for now - Basically copy & pasted code I used for MSP1, want to quickly get onto the Javascript part of the project because I want that to be where I spend my time, can edit if I have time toward the end.-->
@@ -78,5 +103,6 @@
             </div>
         </div>
     </footer>
+    <script src="assets/js/contact-us.js"></script>
 </body>
 </html>
