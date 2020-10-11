@@ -287,3 +287,20 @@ Coffee Aroma
         });
         }
     </script> 
+
+
+
+
+
+
+
+
+
+    const request = [
+            { query: "quilliam brothers", fields: ["name", "geometry"]},
+            {query: "eldon square", fields: ["name", "geometry"]}
+        ]
+
+       const request2 = {
+          (let i = 0; i < request.length; i++)
+        };

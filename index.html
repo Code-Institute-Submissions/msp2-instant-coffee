@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
-    <script src="assets/js/jq-questionnaire.js"></script> 
     <title>Instant Coffee | Indy Coffee Shop Locator</title>
 </head>
 <body>
@@ -51,10 +50,9 @@
                         <p>Now, just tell us where you are and we'll get to work finding one for you</p>
                         <form>
                             <div class="form-group">
-                                <input type="text" class="form-control" id="type-location" aria-describedby="type location" placeholder="Type your Location">
-                                <input type="button" id="find-button" value="find" onclick="up206b"> <!--Make this nicer with Bootstrap or css button generator-->
-                                <!--The following function used and heavily relied* on this tutorial http://gis.yohman.com/up206b/tutorials/5-1/
-                                *by heavily relied on I probably mean totally ripped off, but I'm not sure I haven't done it yet-->
+                                <input type="text" class="controls" id="type-location" aria-describedby="type location" placeholder="Type your Location">
+                                <input type="button" id="find-button" value="find"> <!--Make this nicer with Bootstrap or css button generator-->
+
                             </div>
                         </form>
                         <button id="myBtn">Button!</button>
@@ -130,78 +128,21 @@
         </div>
     </footer>
 
-<!--Test Modal, basic Bootstrap template - trying to get Marker 'on-click' function working-->
-    <div class="modal" tabindex="-1" role="dialog" id="myModal">
-        <!--I've ut the ticket booking in a pop up modal - Basically, I thought it would be good for it to just show up on the page, no matter what page a viewer was on. 
-        The basic layout for the Modal & the form within it was taken from Bootstrap, as well as influenced by the sign-up modal on the Code Institute Whiskey Drop tutorial
-        (but tweaked to be a ticket booking form)-->
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title">Book your tickets now!</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                <div class="center-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" class="form-control" id="name" aria-describedby="name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="email">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-                        </div>
-                        <div class="form-group">
-                            <label>What day would you like tickets?</label>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ticket-type" id="saturday" value="saturday" checked>
-                                <label class="form-check-label" for="saturday">
-                                    Saturday (12/12/2020)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ticket-type" id="sunday" value="sunday">
-                                <label class="form-check-label" for="sunday">
-                                    Sunday (13/12/2020)
-                                </label>
-                            </div>
-                            <div class="form-check">
-                                <input class="form-check-input" type="radio" name="ticket-type" id="weekend" value="weekend">
-                                <label class="form-check-label" for="weekend">
-                                    Weekend Ticket (12/12/2020 - 13/12/2020)
-                                </label>
-                            </div>
-                        </div>
-                        <div class="form-group form-check">
-                            <input type="checkbox" class="form-check-input" id="terms">
-                            <label class="form-check-label" for="terms">
-                                By clicking this button you agree to our terms and conditions. You have to do this or you can't get tickets. 
-                            </label>
-                        </div>
-                            <button type="submit" class="btn myButton">Submit</button>
-                    </form>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
  
-    <script>
-        
-            $("#myBtn").click(function(){
-                $("#myModal").modal();
-            });
-        
-    </script>
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="assets/js/jq-questionnaire.js"></script> 
     <script src="assets/js/locator.js"></script> 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script defer src="https://maps.googleapis.com/maps/api/js?libraries=localContext&v=beta&key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initMap"></script>
+   <!-- <script defer src="https://maps.googleapis.com/maps/api/js?libraries=localContext&v=beta&key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initAutocomplete"></script> -->
+   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&libraries=places"></script> -->
+     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initAutocomplete&libraries=places&v=weekly"
+      defer
+    ></script>
+
+
 
 </body>
 </html>
