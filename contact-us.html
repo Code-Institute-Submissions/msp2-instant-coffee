@@ -19,23 +19,27 @@
     <header>
         <div class="blue-background">
             <div class="row">
-            <div class="col-2">
-                    <img src="assets/images/coffee-1.2.jpg" alt="coffee-logo" class="logo">
+            <div class="col-12 col-lg-2">
+                    <img src="assets/images/new-logo-1.jpg" alt="coffee-logo" class="logo">
                     <h1>Instant Coffee</h1>
                 </div>
-                <div class="col-10">
-                    <ul class="d-inline navbar">
-                    <!--Need to center navlinks, will come back to this once I've spent some time getting Javasctipr in place.-->
-                        <li class="list-inline-item list-nav">
-                            <a href="index.html" class="navlink">Coffee Locator</a>
-                        </li>
-                        <li class="list-inline-item list-nav">
-                            <a href="contact-us.html" class="navlink">Contact Us</a>
-                        </li>
-                        <li class="list-inline-item list-nav">
-                            <a href="about-us.html" class="navlink">About</a>
-                        </li>
-                    </ul>
+                <div class="col-12 col-lg-10">
+                    <nav class="navbar navbar-dark navbar-expand-md">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+                        aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="d-inline navbar-nav">
+                                <li class="list-inline-item list-nav">
+                                    <a href="index.html" class="navlink">Coffee Locator</a>
+                                </li>
+                                <li class="list-inline-item list-nav">
+                                    <a href="contact-us.html" class="navlink">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
@@ -108,7 +112,7 @@
         </div>
     </footer>
 <!--Modal-->
-    <div class="modal" tabindex="-1" role="dialog" id="test-modal">
+<div class="modal" tabindex="-1" role="dialog" id="test-modal">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
       <div class="modal-header">

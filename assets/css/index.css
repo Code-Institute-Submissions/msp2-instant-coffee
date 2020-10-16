@@ -1,0 +1,19 @@
+#container-callout{
+    background: url(../images/hero.jpg) no-repeat center center;
+    background-size: 1000px;
+    background-repeat: no-repeat;
+    vertical-align: middle;
+    height: 500px;
+    position: relative;
+}
+
+.jumbotron {
+    height: 400px;  
+    background: transparent;
+    text-align: center;
+    padding: none;
+}
+
+div#map {
+    min-height: 1000px;
+}

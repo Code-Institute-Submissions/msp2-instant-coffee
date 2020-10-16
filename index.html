@@ -6,80 +6,67 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="assets/css/index.css">
     <title>Instant Coffee | Indy Coffee Shop Locator</title>
 </head>
 <body>
    <header>
         <div class="blue-background">
             <div class="row">
-            <div class="col-2">
-                    <img src="assets/images/coffee-1.2.jpg" alt="coffee-logo" class="logo">
+            <div class="col-12 col-lg-2">
+                    <img src="assets/images/new-logo-1.jpg" alt="coffee-logo" class="logo">
                     <h1>Instant Coffee</h1>
                 </div>
-                <div class="col-10">
-                    <ul class="d-inline navbar">
-                    <!--Need to center navlinks, will come back to this once I've spent some time getting Javasctip in place.-->
-                        <li class="list-inline-item list-nav">
-                            <a href="index.html" class="navlink">Coffee Locator</a>
-                        </li>
-                        <li class="list-inline-item list-nav">
-                            <a href="contact-us.html" class="navlink">Contact Us</a>
-                        </li>
-                        <li class="list-inline-item list-nav">
-                            <a href="about-us.html" class="navlink">About</a>
-                        </li>
-                    </ul>
+                <div class="col-12 col-lg-10">
+                    <nav class="navbar navbar-dark navbar-expand-md">
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
+                        aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                            <ul class="d-inline navbar-nav">
+                                <li class="list-inline-item list-nav">
+                                    <a href="index.html" class="navlink">Coffee Locator</a>
+                                </li>
+                                <li class="list-inline-item list-nav">
+                                    <a href="contact-us.html" class="navlink">Contact Us</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
                 </div>
             </div>
         </div>
     </header>
     <article class="main-content">
-        <div>
-            <div class="row">
-                <div class="col-2"><!--Empty Col for spacing--></div>
-                <div class="col-8 enter-location">
-                    <div id="welcome">
-                        <h2>Hello! I'm Instant Coffee, your Coffee shop locator</h2>
-                        <p>So, are you looking for a coffee shop?</p>
-                        <button id="yes">Yes</button>
-                        <button id="no">No</button>
-                    </div>
-                    <!--If Yes: -->
-                    <div id="search">
-                        <p>That's fantastic news!</p>
-                        <p>Now, just tell us where you are and we'll get to work finding one for you</p>
-                        <form>
-                            <div class="form-group">
-                                <input type="text" class="controls" id="type-location" aria-describedby="type location" placeholder="Type your Location">
-                                <input type="button" id="find-button" value="find"> <!--Make this nicer with Bootstrap or css button generator-->
-
-                            </div>
-                        </form>
-                    </div>
-                    <!--If No:-->
-                    <div id="question-2">
-                        <p>...erm...</p>
-                        <p>Well...Do you want to get in touch with us to let us know something about a coffee shop? <br>This could be your own coffee shop (that we've shamefully missed), one you've visited and particularly enjoyed. But those are just suggestions, we're happy to read pretty much anything.</p>
-                        <button id="2-yes">Yes</button>
-                        <button id="2-no">No</button>
-                    </div>
-                    <!--If 2-yes:-->
-                    <div id="link-to-contact">
-                        <p>Brilliant! Then just click below to go to out contact page.</p>
-                        <button id="contact"><a href="contact-us.html">Contact Page</a></button>
-                    </div>
-                     <!--If 2-no:-->
-                     <div id="sorry">
-                        <p>Oh. Well then I'm not really sure what else I can do for you. I've kind of only got the one trick, sorry.</p>
-                        <p>If change your midn though and decide you absolutley <em>must</em> find a coffee shop, feel free to click below and we can get you sorted.</p>
-                        <button id="restart">I've changed my mind</button>
-                    </div>
+        <div id="container-callout">
+            <div class="row no-margin">
+                <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
+                <div class="col-12 col-md-8" id="container-jumbo">
+                        <div class="jumbotron">
+                        <h2>Welcome to Instant coffee!</h2>
+                        <p>Stuck in the city and looking for coffee?</p>
+                        <p>We've got you covered!</p>
+                        <button type="button" data-toggle="modal" data-target="#questionnaire" aria-controls="begin" id="begin">Begin</button>
+                        </div>                   
                 </div>
-                <div class="col-2"><!--Empty Col for spacing--></div>
+                <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
             </div>
+        </div>
             <div class="row">
-                <div class="col-2"><!--Empty Col for spacing--></div>
-                <div class="col-8 locator">
+                <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
+
+                <div id="search">
+                        
+                    </div>
+                <div class="col-12 col-md-8" id="locator">
+                    <p>That's fantastic news!</p>
+                    <p>Now, just tell us where you are and we'll get to work finding one for you</p>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="controls" id="type-location" aria-describedby="type location" placeholder="Type your Location">
+                        </div>
+                    </form>
                     <div id="map"></div>
                      <div id="listing">
                         <table id="resultsTable">
@@ -115,10 +102,10 @@
                     </div>
                 
                 </div>
-                <div class="col-2"><!--Empty Col for spacing--></div>
+                <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
             
             </div>
-        </div>
+        
     </article>
     <footer class="container-fluid">
     <!--Placeholder Footer for now - Basically copy & pasted code I used for MSP1, want to quickly get onto the Javascript part of the project because I want that to be where I spend my time, can edit if I have time toward the end.-->
@@ -156,6 +143,61 @@
             </div>
         </div>
     </footer>
+    <div class="modal" tabindex="-1" role="dialog" id="questionnaire">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Hello! I'm Instant Coffee, your Coffee shop locator</h3>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+    <div id="welcome">
+        <div class="modal-body">
+                <p>So, are you looking for a coffee shop?</p>
+        </div>
+        <div class="modal-footer">
+            <button id="yes" data-dismiss="modal">Yes</button>
+            <button id="no">No</button>
+        </div>
+    </div>
+
+    <!--If No:-->
+    <div id="question-2">
+        <div class="modal-body">
+                <p>...erm...</p>
+                <p>Well...Do you want to get in touch with us to let us know something about a coffee shop? <br>This could be your own coffee shop (that we've shamefully missed),
+                    one you've visited and particularly enjoyed. But those are just suggestions, we're happy to read pretty much anything.</p>
+        </div>
+        <div class="modal-footer">
+            <button id="2-yes">Yes</button>
+            <button id="2-no">No</button>
+        </div>
+    </div>
+
+    <!--If 2-yes:-->
+    <div id="link-to-contact">
+        <div class="modal-body">
+                <p>Brilliant! Then just click below to go to out contact page.</p>
+        </div>
+        <div class="modal-footer">
+            <button id="contact"><a href="contact-us.html">Contact Page</a></button>
+        </div>
+    </div>
+
+    <!--If 2-no:-->
+    <div id="sorry">
+        <div class="modal-body">
+                <p>Oh. Well then I'm not really sure what else I can do for you. I've kind of only got the one trick, sorry.</p>
+                <p>If change your midn though and decide you absolutley <em>must</em> find a coffee shop, feel free to click below and we can get you sorted.</p>
+        </div>
+        <div class="modal-footer">
+             <button id="restart">I've changed my mind</button>
+        </div>
+    </div>   
+    </div>
+  </div>
+</div>
 
  
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
@@ -163,8 +205,6 @@
     <script src="assets/js/jq-questionnaire.js"></script> 
     <script src="assets/js/locator.js"></script> 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-   <!-- <script defer src="https://maps.googleapis.com/maps/api/js?libraries=localContext&v=beta&key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initAutocomplete"></script> -->
-   <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&libraries=places"></script> -->
      <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initMap&libraries=places&v=weekly"

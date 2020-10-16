@@ -3,21 +3,19 @@
 //Have seperated this from locator.js file where this code was originally written. This is partially to help me keep it seperate, but mostly because the jQuery stuff needs to load first or all of its hidden element
 //show up when the page loads (just for a second but it looks bad).
 
-  //  $("#search").hide();
+   
     $("#question-2").hide();
     $("#link-to-contact").hide();
     $("#sorry").hide();
+    $("#locator").hide();
 
 //If Yes to Q-1
     $('#yes').on('click', function() {
-        $("#search").show();
+       
+        $("#locator").show();
         $("#welcome").hide();
+        $("#container-callout").hide();
     })
-
-   /* $("#map").hide();
-    $('#find-button').on('click', function() {
-        $("#map").show();
-    })*/
 
 //If no to Q-1
     $('#no').on('click', function() {
@@ -41,3 +39,11 @@
        $("#welcome").show();
        $("#sorry").hide();
     })
+
+
+
+
+
+
+
+
