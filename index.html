@@ -12,13 +12,13 @@
 <body>
    <header>
         <div class="blue-background">
-            <div class="row">
-            <div class="col-12 col-lg-2">
+            <div class="row no-margin">
+            <div class="col-12 col-lg-3 no-padding">
                     <img src="assets/images/new-logo-1.2.jpg" alt="coffee-logo" class="logo">
-                    <h1>Instant Coffee</h1>
+                    <h1 class="logo-h1">Instant Coffee</h1>
                 </div>
-                <div class="col-12 col-lg-10">
-                    <nav class="navbar navbar-dark navbar-expand-md">
+                <div class="col-12 col-lg-9">
+                    <nav class="navbar navbar-dark navbar-expand-lg">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
                         aria-expanded="false" aria-label="Toggle navigation">
                             <span class="navbar-toggler-icon"></span>
@@ -28,6 +28,7 @@
                                 <li class="list-inline-item list-nav">
                                     <a href="index.html" class="navlink">Coffee Locator</a>
                                 </li>
+                                <br class="d-lg-none">
                                 <li class="list-inline-item list-nav">
                                     <a href="contact-us.html" class="navlink">Contact Us</a>
                                 </li>
@@ -139,65 +140,64 @@
                 </ul>                    
             </div>
             <div class="col-12 coffeeright">
-                <p>Everything is coffeeright 2020 on this page. Don't steal it. Instant coffee is trademark bad pun. Don't steal it.<br>Or do? None of this is real!!!</p>
+                <p>Everything is coffeeright 2020 on this page. Don't steal it.<br> None of this is real!!!</p>
             </div>
         </div>
     </footer>
     <div class="modal" tabindex="-1" role="dialog" id="questionnaire">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h3 class="modal-title">Hello! I'm Instant Coffee, your Coffee shop locator</h3>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-    </div>
-    <div id="welcome">
-        <div class="modal-body">
-                <p>So, are you looking for a coffee shop?</p>
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h3 class="modal-title">Hello! I'm Instant Coffee, your Coffee shop locator</h3>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
         </div>
-        <div class="modal-footer">
-            <button id="yes" class="brown-button" data-dismiss="modal">Yes</button>
-            <button id="no" class="brown-button">No</button>
+        <div id="welcome">
+            <div class="modal-body">
+                    <p>So, are you looking for a coffee shop?</p>
+            </div>
+            <div class="modal-footer">
+                <button id="yes" class="brown-button" data-dismiss="modal">Yes</button>
+                <button id="no" class="brown-button">No</button>
+            </div>
         </div>
-    </div>
 
-    <!--If No:-->
-    <div id="question-2">
-        <div class="modal-body">
-                <p>...erm...</p>
-                <p>Well...Do you want to get in touch with us to let us know something about a coffee shop? <br>This could be your own coffee shop (that we've shamefully missed),
-                    one you've visited and particularly enjoyed. But those are just suggestions, we're happy to read pretty much anything.</p>
+        <!--If No:-->
+        <div id="question-2">
+            <div class="modal-body">
+                        <p>Do you want to get in touch with us to let us know something about a coffee shop? <br>This could be your own coffee shop, one you've visited and particularly enjoyed or 
+                        we're happy to read pretty much anything.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="2-yes" class="brown-button">Yes</button>
+                <button id="2-no" class="brown-button">No</button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button id="2-yes" class="brown-button">Yes</button>
-            <button id="2-no" class="brown-button">No</button>
-        </div>
-    </div>
 
-    <!--If 2-yes:-->
-    <div id="link-to-contact">
-        <div class="modal-body">
-                <p>Brilliant! Then just click below to go to out contact page.</p>
+        <!--If 2-yes:-->
+        <div id="link-to-contact">
+            <div class="modal-body">
+                    <p>Brilliant! Then just click below to go to out contact page.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="contact" class="brown-button"><a href="contact-us.html">Contact Page</a></button>
+            </div>
         </div>
-        <div class="modal-footer">
-            <button id="contact" class="brown-button"><a href="contact-us.html">Contact Page</a></button>
-        </div>
-    </div>
 
-    <!--If 2-no:-->
-    <div id="sorry">
-        <div class="modal-body">
-                <p>Oh. Well then I'm not really sure what else I can do for you. I've kind of only got the one trick, sorry.</p>
-                <p>If change your midn though and decide you absolutley <em>must</em> find a coffee shop, feel free to click below and we can get you sorted.</p>
+        <!--If 2-no:-->
+        <div id="sorry">
+            <div class="modal-body">
+                    <p>Oh. Well then I'm not really sure what else I can do for you. I've kind of only got the one trick, sorry.</p>
+                    <p>If change your midn though and decide you absolutley <em>must</em> find a coffee shop, feel free to click below and we can get you sorted.</p>
+            </div>
+            <div class="modal-footer">
+                <button id="restart" class="brown-button">I've changed my mind</button>
+            </div>
+        </div>   
         </div>
-        <div class="modal-footer">
-             <button id="restart" class="brown-button">I've changed my mind</button>
-        </div>
-    </div>   
     </div>
-  </div>
-</div>
+    </div>
 
  
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>

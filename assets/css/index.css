@@ -19,7 +19,7 @@
 .jumbotron {
     color: #2c4653;
     padding-right: 0px;
-    padding-top: 50px;
+    padding-top: 30px;
     margin-right: 90px;
   }
 }
@@ -49,3 +49,10 @@ h2 {
 p {
     font-size: 20px;
 }
+
+#locator {
+    padding-top: 1%;
+    font-size: 20px;
+}
+
+
