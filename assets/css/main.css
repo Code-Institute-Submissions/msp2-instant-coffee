@@ -79,6 +79,11 @@ h1 {
 	top:1px;
 }
 
+.modal .blue-button:hover {
+	background-color:#DBC589;
+    color:#2c4653;
+}
+
 .brown-button {
     background-color:  #DBC589;
     border-radius: 7px;
@@ -185,4 +190,17 @@ div#map {
 .list-nav {
     padding-left: 0px;
   }
+}
+
+
+/* ------ Modal styling ------- */
+
+.modal-content {
+    background-color: #B4CED9;
+    color: #2c4653;
+}
+
+.modal-content h4 {
+   font-family: 'roboto', sans-serif;
+
 }
