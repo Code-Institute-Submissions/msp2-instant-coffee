@@ -5,14 +5,6 @@ function sendMail(contactForm) {
         "company": contactForm.company.value,
         "message": contactForm.message.value
     })
-    .then(
-        function(response) {
-            console.log("SUCCESS", response);
-        },
-        function(error) {
-            console.log("FAILED", error)
-        }
-    )
     return false;
 }
 
