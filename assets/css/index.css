@@ -1,4 +1,11 @@
-#container-callout{
+/*I've split off CSS files for each page, as well as a seperate one for common elements across both pages such as header & footer. 
+This helps me organise my CSS and is also something I was advised to do by my mentor as it helps with load times
+(theoretically - he also said it won't make much difference on projects of this scale, but is a good practise to get into),
+This page covers the index.html page.
+*/
+
+/*Container-callout & Jumbotron*/
+#container-callout {
     background: url(../images/hero.jpg) no-repeat center center;
     background-size: 1000px;
     background-repeat: no-repeat;
@@ -13,6 +20,14 @@
     text-align: center;
     padding-right: 500px;
     padding-top: 100px;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+p {
+    font-size: 20px;
 }
 
 @media only screen and (max-width: 767px) {
@@ -51,31 +66,18 @@
 .jumbotron p {
     font-size: 18px;
   }
-
-
-h2 {
-    font-size: 3rem;
 }
 
-p {
-    font-size: 20px;
+/*Locator & Map styling - for the most part, the css for this isn't working. See bugs section in Readme.*/
+.map {
+    margin-bottom: 10%;
+}
+
+#listing {
+    margin-right: 20%;
 }
 
 .container-locator {
     margin-top: 2%;
     font-family: Roboto;
 }
-
-p {
-    margin-top: 2%;
-}
-
-
-.map {
-    margin-bottom: 10%;
-}
-
-#listing {
-    margin-left: 10%;
-}
-

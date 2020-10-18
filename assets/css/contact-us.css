@@ -1,3 +1,9 @@
+/*I've split off CSS files for each page, as well as a seperate one for common elements across both pages such as header & footer. 
+This helps me organise my CSS and is also something I was advised to do by my mentor as it helps with load times
+(theoretically - he also said it won't make much difference on projects of this scale, but is a good practise to get into),
+This page covers the contact-us.html page.
+*/
+
 #contact-head{
     font-size: 3.5rem;
     padding-top: 2%;
@@ -38,4 +44,16 @@ label {
     padding: 5px 25px;
     text-decoration: none;
     font-family: 'Nothing You Could Do', cursive;
+}
+
+@media only screen and (max-width: 991px) {
+.contact-us {
+    padding-left: 10%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+.contact-us {
+    padding-top: 5%;
+  }
 }

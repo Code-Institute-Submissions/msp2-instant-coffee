@@ -30,7 +30,6 @@
                                 <li class="list-inline-item list-nav">
                                     <a href="index.html" class="navlink">Coffee Locator</a>
                                 </li>
-                                <br class="d-lg-none">
                                 <li class="list-inline-item list-nav">
                                     <a href="contact-us.html" class="navlink">Contact Us</a>
                                 </li>
@@ -44,8 +43,8 @@
     <article class="main-content">
         <div id="container-callout">
             <div class="row no-margin">
-                <div class="col-d-none col-sm-2"><!--Empty Col for spacing--></div>
-                <div class="col-12 col-sm-8" id="container-jumbo">
+                <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
+                <div class="col-12 col-md-8" id="container-jumbo">
                         <div class="jumbotron">
                         <h2>Welcome to <br class="d-md-none">Instant coffee!</h2>
                         <p>Stuck in the city <br class="d-md-none"> and looking for coffee?</p>
@@ -63,7 +62,7 @@
                     <p>Now, just tell us where you are and we'll get to work finding one for you</p>
                     <form onsubmit="return false">
                         <div class="form-group">
-                            <input type="text" class="controls" id="type-location" aria-describedby="type location" placeholder="Type your Location">
+                            <input type="text" class="controls" id="type-location" aria-describedby="type-location" placeholder="Type your Location">
                         </div>
                         <div id="controls">
                             <select id="country">
@@ -200,7 +199,7 @@
                     <p>Brilliant! Then just click below to go to out contact page.</p>
             </div>
             <div class="modal-footer">
-                <button id="contact" class="blue-button"><a href="contact-us.html">Contact Page</a></button>
+                <button id="contact" class="blue-button" onclick="window.location.href='contact-us.html'">Contact Page</button>
             </div>
         </div>
 

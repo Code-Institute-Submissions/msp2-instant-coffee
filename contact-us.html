@@ -19,10 +19,12 @@
     <header>
         <div class="blue-background">
             <div class="row no-margin">
-            <div class="col-12 col-lg-3 no-padding">
+            <div class="col-12 col-lg-3 no-padding container-logo">
+                <a href="index.html">
                     <img src="assets/images/new-logo-1.2.jpg" alt="coffee-logo" class="logo">
                     <h1 class="logo-h1">Instant Coffee</h1>
-                </div>
+                </a>
+            </div>
                 <div class="col-12 col-lg-9">
                     <nav class="navbar navbar-dark navbar-expand-lg">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
@@ -34,7 +36,6 @@
                                 <li class="list-inline-item list-nav">
                                     <a href="index.html" class="navlink">Coffee Locator</a>
                                 </li>
-                                <br class="d-lg-none">
                                 <li class="list-inline-item list-nav">
                                     <a href="contact-us.html" class="navlink">Contact Us</a>
                                 </li>
@@ -46,35 +47,37 @@
         </div>
     </header>
     <article id="contact-form">
-    <div class="row">
-    <div class="col-2"></div>
-    <div class="col-8">
-        <h2 id="contact-head">Contact-us</h2>
-        <p>Do you have any feedback on the coffee locator experience? Want to tell us about a nice coffee shop you've ended up in? Or maybe you run a coffee shop that we've missed! Whatever the reason, you can get in touch with us by filling out the below: </p>
-        <form onsubmit="return sendMail(this);">
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Tell us your name......" required>
+        <div class="container-fluid">
+            <div class="row">
+            <div class="col-1 col-lg-3"></div>
+            <div class="col-9 col-lg-6 contact-us">
+                <h2 id="contact-head">Contact-us</h2>
+                <p>Do you have any feedback on the coffee locator experience? You can get in touch with us by filling out the below: </p>
+                <form onsubmit="return sendMail(this);">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Tell us your name......" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="company">Company (Optional)</label>
+                        <input type="text" class="form-control" id="company" placeholder="Are you emailing on behalf of a company?">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                    </div>
+                    <div class="btn-wrap">
+                        <button type="submit" class="btn blue-button-nh" data-toggle="modal" data-target="#test-modal" id="submit">Submit</button>
+                    </div>
+                </form>
             </div>
-            <div class="form-group">
-                <label for="company">Company (Optional)</label>
-                <input type="text" class="form-control" id="company" placeholder="Are you emailing on behalf of a company?">
-            </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Email Address" required>
-            </div>
-            <div class="form-group">
-                <label for="message">Message</label>
-                <textarea class="form-control" id="message" rows="3" required></textarea>
-            </div>
-            <div class="btn-wrap">
-                <button type="submit" class="btn blue-button-nh" data-toggle="modal" data-target="#test-modal" id="submit">Submit</button>
-            </div>
-        </form>
-    </div>
-    <div class="col-2"></div>
-    </div>        
+            <div class="col-1 col-lg-3"></div>
+            </div>  
+        </div>      
     </article>
    <footer class="container-fluid">
     <!--Placeholder Footer for now - Basically copy & pasted code I used for MSP1, want to quickly get onto the Javascript part of the project because I want that to be where I spend my time, can edit if I have time toward the end.-->

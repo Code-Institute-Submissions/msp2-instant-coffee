@@ -16,28 +16,28 @@
         $("#locator").show();
         $("#welcome").hide();
         $("#container-callout").hide();
-    })
+    });
 
 //If no to Q-1
     $('#no').on('click', function() {
        $("#question-2").show();
        $("#welcome").hide();
-    })
+    });
 //If yes to Q-2
     $('#2-yes').on('click', function() {
        $("#link-to-contact").show();
        $("#question-2").hide();
-    })
+    });
 
 //If no to Q-2
     $('#2-no').on('click', function() {
        $("#sorry").show();
        $("#question-2").hide();
-    })
+    });
 
 //If Restart
      $('#restart').on('click', function() {
        $("#welcome").show();
        $("#sorry").hide();
-    })
+    });
 
