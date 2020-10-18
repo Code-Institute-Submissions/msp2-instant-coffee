@@ -11,12 +11,15 @@ The aim of the project actually changed slightly during the development process.
 and the original plan was to essentially take the coffee shops in this book and use the google maps API as well as markers & marker clusters to place them on a map. I think the important distinction is that
 the initial project was focused specifically on Independent coffee shops. 
 
-The aim of the final project is to provide a tool to allow users - talk about difference in final aim
+The aim of the final project is to provide a tool to allow users to find *any* nearby coffee shop. It aims to present this information in an interactive way with a stylish UX. It also aims to present this well on 
+mobile as the tool will likley be primarily used by people who are out and about. 
 
-The main reasons for these changes are: 
-- struggled to put in my own markers as well as using google's autocomplete function (TBH, this is the main reason)
-- Not many markers
-- Also, whilst I initially had lans to implement a good few more features that I ended up with, The Independent coffee Guide provides something [very close](https://indycoffee.guide/north-midlands-north-wales-independent-coffee-guide-venue-finder/) 
+The main reasons for the change in aim are: 
+- I found it very difficult early on to get the Google Maps API working. I got the initmap function in easily enough and even managed to put in my own markers but it had no working search bar orlocation based functionality 
+Eventually, I managed to load up a different version of the map that included an autocomplete search bar and put a marker down for the location the user had typed in - but I couldn't get this to display with MY markers 
+on it. Ultimatley I went with this version of the project after it was suggested to me as the result of somme very panicked tutor support queries. 
+- Aditionally though, I prefer this version of the project as, despite being a lot of work finding coordinates, the Independent Coffee Guide only has around 40 coffee shops and this really narrowed the usefulness of the product. 
+- Also, whilst I initially had plans to implement a good few more features that I ended up with, The Independent coffee Guide provides something [very close](https://indycoffee.guide/north-midlands-north-wales-independent-coffee-guide-venue-finder/) 
 to what my project ended up being. So I think the change in focus to any coffee shop provides an important distinction.  
 
 I think this is all worth noting because ultimatley, I spent a lot of time trying to get my Google Maps function to diplay in a way that would both take in the users location AND show markers for all of the nearby coffee shops. 
