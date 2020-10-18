@@ -13,10 +13,12 @@
    <header>
         <div class="blue-background">
             <div class="row no-margin">
-            <div class="col-12 col-lg-3 no-padding">
+            <div class="col-12 col-lg-3 no-padding container-logo">
+                <a href="index.html">
                     <img src="assets/images/new-logo-1.2.jpg" alt="coffee-logo" class="logo">
                     <h1 class="logo-h1">Instant Coffee</h1>
-                </div>
+                </a>
+            </div>
                 <div class="col-12 col-lg-9">
                     <nav class="navbar navbar-dark navbar-expand-lg">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
@@ -56,20 +58,37 @@
         </div>
             <div class="row">
                 <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
-
-                <div id="search">
-                        
-                    </div>
                 <div class="col-12 col-md-8" id="locator">
-                    <p>That's fantastic news!</p>
+                    <p class="container-locator">That's fantastic news!</p>
                     <p>Now, just tell us where you are and we'll get to work finding one for you</p>
                     <form onsubmit="return false">
                         <div class="form-group">
                             <input type="text" class="controls" id="type-location" aria-describedby="type location" placeholder="Type your Location">
                         </div>
+                        <div id="controls">
+                            <select id="country">
+                                <option value="all">All</option>
+                                <option value="au">Australia</option>
+                                <option value="br">Brazil</option>
+                                <option value="ca">Canada</option>
+                                <option value="fr">France</option>
+                                <option value="de">Germany</option>
+                                <option value="mx">Mexico</option>
+                                <option value="nz">New Zealand</option>
+                                <option value="it">Italy</option>
+                                <option value="za">South Africa</option>
+                                <option value="es">Spain</option>
+                                <option value="pt">Portugal</option>
+                                <option value="us">U.S.A.</option>
+                                <option value="uk" selected>United Kingdom</option>
+                                <option value="ie">Ireland</option> 
+                                </select>
+                            </div>
                     </form>
-                    <div id="map"></div>
-                     <div id="listing">
+                    <div id="map"></div>                
+                </div>
+                <div class="col-d-none col-md-2">               
+                <div id="listing">
                         <table id="resultsTable">
                             <tbody id="results"></tbody>
                         </table>
@@ -102,9 +121,9 @@
                         </div>
                     </div>
                 
-                </div>
-                <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
+                
             
+            </div>
             </div>
         
     </article>
@@ -205,7 +224,7 @@
     <script src="assets/js/jq-questionnaire.js"></script> 
     <script src="assets/js/locator.js"></script> 
     <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initMap&libraries=places&v=weekly"
       defer

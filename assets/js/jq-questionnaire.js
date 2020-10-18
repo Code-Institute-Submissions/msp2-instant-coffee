@@ -8,6 +8,7 @@
     $("#link-to-contact").hide();
     $("#sorry").hide();
     $("#locator").hide();
+    $("list-container").hide();
 
 //If Yes to Q-1
     $('#yes').on('click', function() {
@@ -39,11 +40,4 @@
        $("#welcome").show();
        $("#sorry").hide();
     })
-
-
-
-
-
-
-
 

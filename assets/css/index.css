@@ -61,9 +61,21 @@ p {
     font-size: 20px;
 }
 
-#locator {
-    padding-top: 1%;
-    font-size: 20px;
+.container-locator {
+    margin-top: 2%;
+    font-family: Roboto;
 }
 
+p {
+    margin-top: 2%;
+}
+
+
+.map {
+    margin-bottom: 10%;
+}
+
+#listing {
+    margin-left: 10%;
+}
 
