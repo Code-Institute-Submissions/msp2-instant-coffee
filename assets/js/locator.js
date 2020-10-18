@@ -1,10 +1,8 @@
-// This example uses the autocomplete feature of the Google Places API.
-// It allows the user to find all hotels in a given place, within a given
-// country. It then displays markers for all the hotels returned,
-// with on-click details for each hotel.
-// This example requires the Places library. Include the libraries=places
-// parameter when you first load the API. For example:
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places">
+/*This page uses the Google Places API to allow the user to type in a city and locate any coffee shops in the surroinding area. 
+
+This page relies VERY heavily on Google Places' autocomplete hotel finder example. I've made some changes, such as the default country (changed fro US to UK) and changing the search type from lodgings to cafe (as well as including Ireland!)
+But I really want to make it clear, the below is very close to Google's example found here - https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-hotelsearch  */
+
 let map;
 let places;
 let infoWindow;
@@ -72,7 +70,8 @@ const countries = {
     zoom: 7,
   }, 
 /*Ireland wasn't included in options in the google tutorial, but I thought I better get it working if I'm doing a course where everyone is based in Ireland 
-(When I spoke to my mentor he said the first thing he did was type in 'Dublin' and at the time it wasn't working.)*/
+(I'm semi being funny, but when I spoke to my mentor he said the first thing he did was type in 'Dublin' and at the time it wasn't working - and I had visions of whoever is marking it doing the same 
+and just thinking it just doesn't work)*/
 };
 
 function initMap() {
@@ -87,8 +86,12 @@ function initMap() {
   infoWindow = new google.maps.InfoWindow({
     content: document.getElementById("info-content"),
   });
-  // Create the autocomplete object and associate it with the UI input control.
-  // Restrict the search to the default country, and to place type "cities".
+
+/*I'm not totally sure the best way to go about commenting each function - the Google example comes with pretty clear comments on what each bit does and I don't want to just reword what was written there
+So I think I'm going to mark google's comments as theirs and add anything I think is nescessary*/ 
+  /* GOOGLE'S COMMENTS: Create the autocomplete object and associate it with the UI input control.
+  Restrict the search to the default country, and to place type "cities".*/
+  //The main change I've made below is changing the id to 'type-location' as I'd already given this ID to my search bar before finding this solution. 
   autocomplete = new google.maps.places.Autocomplete(
     document.getElementById("type-location"),
     {
@@ -98,13 +101,13 @@ function initMap() {
   );
   places = new google.maps.places.PlacesService(map);
   autocomplete.addListener("place_changed", onPlaceChanged);
-  // Add a DOM event listener to react when the user selects a country.
+  // GOOGLE'S COMMENTS: Add a DOM event listener to react when the user selects a country.
   document
     .getElementById("country")
     .addEventListener("change", setAutocompleteCountry);
 }
 
-// When the user selects a city, get the place details for the city and
+// GOOGLE'S COMMENTS: When the user selects a city, get the place details for the city and
 // zoom the map in on the city.
 function onPlaceChanged() {
   const place = autocomplete.getPlace();
@@ -118,7 +121,9 @@ function onPlaceChanged() {
   }
 }
 
-// Search for hotels in the selected city, within the viewport of the map.
+
+//The key change I've made here is changing "lodgings" to "cafe in the search function"
+// GOOGLE'S COMMENTS: Search for hotels in the selected city, within the viewport of the map.
 function search() {
   const search = {
     bounds: map.getBounds(),
@@ -129,18 +134,19 @@ function search() {
       clearResults();
       clearMarkers();
 
-      // Create a marker for each hotel found, and
-      // assign a letter of the alphabetic to each marker icon.
+    //The next few Google comments refer to hotels being found - obviously my version refers to coffee shops instead.
+      /*GOOGLE'S COMMENTS: Create a marker for each hotel found, and
+      assign a letter of the alphabetic to each marker icon.*/
       for (let i = 0; i < results.length; i++) {
         const markerLetter = String.fromCharCode("A".charCodeAt(0) + (i % 26));
         const markerIcon = MARKER_PATH + markerLetter + ".png";
-        // Use marker animation to drop the icons incrementally on the map.
+        // GOOGLE'S COMMENTS: Use marker animation to drop the icons incrementally on the map.
         markers[i] = new google.maps.Marker({
           position: results[i].geometry.location,
           animation: google.maps.Animation.DROP,
           icon: markerIcon,
         });
-        // If the user clicks a hotel marker, show the details of that hotel
+        //GOOGLE'S COMMENTS: If the user clicks a hotel marker, show the details of that hotel
         // in an info window.
         markers[i].placeResult = results[i];
         google.maps.event.addListener(markers[i], "click", showInfoWindow);
@@ -160,7 +166,7 @@ function clearMarkers() {
   markers = [];
 }
 
-// Set the country restriction based on user input.
+// GOOGLE'S COMMENTS: Set the country restriction based on user input.
 // Also center and zoom the map on the given country.
 function setAutocompleteCountry() {
   const country = document.getElementById("country").value;
@@ -216,7 +222,7 @@ function clearResults() {
   }
 }
 
-// Get the place details for a hotel. Show the information in an info window,
+// GOOGLE'S COMMENTS: Get the place details for a hotel. Show the information in an info window,
 // anchored on the marker for the hotel that the user selected.
 function showInfoWindow() {
   const marker = this;
@@ -232,7 +238,7 @@ function showInfoWindow() {
   );
 }
 
-// Load the place information into the HTML elements used by the info window.
+// GOOGLE'S COMMENTS: Load the place information into the HTML elements used by the info window.
 function buildIWContent(place) {
   document.getElementById("iw-icon").innerHTML =
     '<img class="hotelIcon" ' + 'src="' + place.icon + '"/>';
@@ -248,7 +254,7 @@ function buildIWContent(place) {
     document.getElementById("iw-phone-row").style.display = "none";
   }
 
-  // Assign a five-star rating to the hotel, using a black star ('&#10029;')
+  //GOOGLE'S COMMENTS: Assign a five-star rating to the hotel, using a black star ('&#10029;')
   // to indicate the rating the hotel has earned, and a white star ('&#10025;')
   // for the rating points not achieved.
   if (place.rating) {
@@ -267,7 +273,7 @@ function buildIWContent(place) {
     document.getElementById("iw-rating-row").style.display = "none";
   }
 
-  // The regexp isolates the first part of the URL (domain plus subdomain)
+  //GOOGLE'S COMMENTS: The regexp isolates the first part of the URL (domain plus subdomain)
   // to give a short URL for displaying in the info window.
   if (place.website) {
     let fullUrl = place.website;

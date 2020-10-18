@@ -1,3 +1,6 @@
+/*This page contains the Javascript for contact-us.html page. Mostly concerns email.js contact form*/
+
+//This function gets the form working
 function sendMail(contactForm) {
     emailjs.send("instantcoffee", "Instant Coffee", {
         "from_name": contactForm.name.value,
@@ -9,7 +12,9 @@ function sendMail(contactForm) {
 }
 
 
-//https://joomla.stackexchange.com/questions/4614/make-submit-button-inactive-until-fields-have-been-filled
+/*The following disabled the 'Submit' button unless the required fields are filled out. Nescessary both for user experience and also because at one point before I disabled it, 
+I kept clicking the button thinking it hadn't worked and then realised I had a LOT of emails sent to me.
+I found the solution here: https://joomla.stackexchange.com/questions/4614/make-submit-button-inactive-until-fields-have-been-filled*/
 
 $("#submit").prop('disabled', true);
 

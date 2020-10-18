@@ -1,9 +1,9 @@
-//On Click function for map & find button - Hides Map until find button is pressed 
-//(I realised this has to go before the map, or the map doesn't hide - I'm also aware I can hide the map in CSS, but we're testing Javascript here!!!!). 
-//Have seperated this from locator.js file where this code was originally written. This is partially to help me keep it seperate, but mostly because the jQuery stuff needs to load first or all of its hidden element
-//show up when the page loads (just for a second but it looks bad).
+/*This page concerns JQuery code that hides or shows navigation elements on the index.html page depending what options are chosen. 
+I've called it questionnaire - although that's probably not the best way to describe it. I split this off from locator.js - the file that has JS code for the Google MAPS API
+because it's pretty different and I didn't want it to get lost in with the google code. 
+*/
 
-   
+//Following element are hidden on page launch, depending on answers to questions, the functions below take place. 
     $("#question-2").hide();
     $("#link-to-contact").hide();
     $("#sorry").hide();

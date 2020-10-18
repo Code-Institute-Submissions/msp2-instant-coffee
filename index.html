@@ -10,15 +10,16 @@
     <title>Instant Coffee | Indy Coffee Shop Locator</title>
 </head>
 <body>
-   <header>
+    <header>
+   <!--Nothing super notable in header, it does it's job-->
         <div class="blue-background">
             <div class="row no-margin">
-            <div class="col-12 col-lg-3 no-padding container-logo">
-                <a href="index.html">
-                    <img src="assets/images/new-logo-1.2.jpg" alt="coffee-logo" class="logo">
-                    <h1 class="logo-h1">Instant Coffee</h1>
-                </a>
-            </div>
+                <div class="col-12 col-lg-3 no-padding container-logo">
+                    <a href="index.html">
+                        <img src="assets/images/new-logo-1.2.jpg" alt="coffee-logo" class="logo">
+                        <h1 class="logo-h1">Instant Coffee</h1>
+                    </a>
+                </div>
                 <div class="col-12 col-lg-9">
                     <nav class="navbar navbar-dark navbar-expand-lg">
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" 
@@ -41,93 +42,95 @@
         </div>
     </header>
     <article class="main-content">
+    <!--Main content is split into two main sections and a modal. For modal notes, see below. The two main sections are 'Container callout' which contains the Hero Image and Jumbotron as well as 'begin' button which triggers the modal. 
+    The second section is 'container-locator' which contains the Google Maps locator and is triggered through the Modal questionnaire.-->
         <div id="container-callout">
             <div class="row no-margin">
                 <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
                 <div class="col-12 col-md-8" id="container-jumbo">
                         <div class="jumbotron">
-                        <h2>Welcome to <br class="d-md-none">Instant coffee!</h2>
-                        <p>Stuck in the city <br class="d-md-none"> and looking for coffee?</p>
-                        <p>We've got you covered!</p>
-                        <button type="button" data-toggle="modal" data-target="#questionnaire" aria-controls="begin" class="blue-button" id="begin">Begin</button>
+                            <h2>Welcome to <br class="d-md-none">Instant coffee!</h2>
+                            <p>Stuck in the city <br class="d-md-none"> and looking for coffee?</p>
+                            <p>We've got you covered!</p>
+                            <button type="button" data-toggle="modal" data-target="#questionnaire" aria-controls="begin" class="blue-button" id="begin">Begin</button>
                         </div>                   
                 </div>
                 <div class="col-d-none col-sm-2"><!--Empty Col for spacing--></div>
             </div>
         </div>
+        <div id="container-locator"> <!--Struggled styling this section, see Bugs in readme for further info-->
             <div class="row">
-                <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
-                <div class="col-12 col-md-8" id="locator">
-                    <p class="container-locator">That's fantastic news!</p>
-                    <p>Now, just tell us where you are and we'll get to work finding one for you</p>
-                    <form onsubmit="return false">
-                        <div class="form-group">
-                            <input type="text" class="controls" id="type-location" aria-describedby="type-location" placeholder="Type your Location">
-                        </div>
-                        <div id="controls">
-                            <select id="country">
-                                <option value="all">All</option>
-                                <option value="au">Australia</option>
-                                <option value="br">Brazil</option>
-                                <option value="ca">Canada</option>
-                                <option value="fr">France</option>
-                                <option value="de">Germany</option>
-                                <option value="mx">Mexico</option>
-                                <option value="nz">New Zealand</option>
-                                <option value="it">Italy</option>
-                                <option value="za">South Africa</option>
-                                <option value="es">Spain</option>
-                                <option value="pt">Portugal</option>
-                                <option value="us">U.S.A.</option>
-                                <option value="uk" selected>United Kingdom</option>
-                                <option value="ie">Ireland</option> 
-                                </select>
+                    <div class="col-d-none col-md-2"><!--Empty Col for spacing--></div>
+                    <div class="col-12 col-md-8" id="locator">
+                        <p class="container-locator">That's fantastic news!</p>
+                        <p>Now, just tell us where you are and we'll get to work finding one for you</p>
+                        <form onsubmit="return false">
+                            <div class="form-group">
+                                <input type="text" class="controls" id="type-location" aria-describedby="type-location" placeholder="Type your Location">
                             </div>
-                    </form>
-                    <div id="map"></div>                
-                </div>
-                <div class="col-d-none col-md-2">               
-                <div id="listing">
-                        <table id="resultsTable">
-                            <tbody id="results"></tbody>
-                        </table>
-                        </div>
-
-                        <div style="display: none">
-                        <div id="info-content">
-                            <table>
-                            <tr id="iw-url-row" class="iw_table_row">
-                                <td id="iw-icon" class="iw_table_icon"></td>
-                                <td id="iw-url"></td>
-                            </tr>
-                            <tr id="iw-address-row" class="iw_table_row">
-                                <td class="iw_attribute_name">Address:</td>
-                                <td id="iw-address"></td>
-                            </tr>
-                            <tr id="iw-phone-row" class="iw_table_row">
-                                <td class="iw_attribute_name">Telephone:</td>
-                                <td id="iw-phone"></td>
-                            </tr>
-                            <tr id="iw-rating-row" class="iw_table_row">
-                                <td class="iw_attribute_name">Rating:</td>
-                                <td id="iw-rating"></td>
-                            </tr>
-                            <tr id="iw-website-row" class="iw_table_row">
-                                <td class="iw_attribute_name">Website:</td>
-                                <td id="iw-website"></td>
-                            </tr>
-                            </table>
-                        </div>
+                            <div id="controls">
+                                <select id="country">
+                                    <option value="all">All</option>
+                                    <option value="au">Australia</option>
+                                    <option value="br">Brazil</option>
+                                    <option value="ca">Canada</option>
+                                    <option value="fr">France</option>
+                                    <option value="de">Germany</option>
+                                    <option value="mx">Mexico</option>
+                                    <option value="nz">New Zealand</option>
+                                    <option value="it">Italy</option>
+                                    <option value="za">South Africa</option>
+                                    <option value="es">Spain</option>
+                                    <option value="pt">Portugal</option>
+                                    <option value="us">U.S.A.</option>
+                                    <option value="uk" selected>United Kingdom</option>
+                                    <option value="ie">Ireland</option> 
+                                    </select>
+                                </div>
+                        </form>
+                        <div id="map"></div>                
                     </div>
+                    <div class="col-d-none col-md-2">               
+                    <div id="listing">
+                            <table id="resultsTable">
+                                <tbody id="results"></tbody>
+                            </table>
+                            </div>
+
+                            <div style="display: none">
+                            <div id="info-content">
+                                <table>
+                                <tr id="iw-url-row" class="iw_table_row">
+                                    <td id="iw-icon" class="iw_table_icon"></td>
+                                    <td id="iw-url"></td>
+                                </tr>
+                                <tr id="iw-address-row" class="iw_table_row">
+                                    <td class="iw_attribute_name">Address:</td>
+                                    <td id="iw-address"></td>
+                                </tr>
+                                <tr id="iw-phone-row" class="iw_table_row">
+                                    <td class="iw_attribute_name">Telephone:</td>
+                                    <td id="iw-phone"></td>
+                                </tr>
+                                <tr id="iw-rating-row" class="iw_table_row">
+                                    <td class="iw_attribute_name">Rating:</td>
+                                    <td id="iw-rating"></td>
+                                </tr>
+                                <tr id="iw-website-row" class="iw_table_row">
+                                    <td class="iw_attribute_name">Website:</td>
+                                    <td id="iw-website"></td>
+                                </tr>
+                                </table>
+                            </div>
+                        </div>
+                    
+                    
                 
-                
-            
+                </div>
             </div>
-            </div>
-        
+        </div>        
     </article>
     <footer class="container-fluid">
-    <!--Placeholder Footer for now - Basically copy & pasted code I used for MSP1, want to quickly get onto the Javascript part of the project because I want that to be where I spend my time, can edit if I have time toward the end.-->
         <div class="row">
             <div class="col-12">                
                 <ul id="contact-us">
@@ -162,6 +165,7 @@
             </div>
         </div>
     </footer>
+    <!--On pressing 'Begin' button in above 'container-callout', the below modal opens. The content changes based on JQUERY show/hide functions attached to the various response buttons.-->
     <div class="modal" tabindex="-1" role="dialog" id="questionnaire">
     <div class="modal-dialog modal-dialog-centered" role="document">
         <div class="modal-content">
@@ -180,7 +184,7 @@
                 <button id="no" class="blue-button">No</button>
             </div>
         </div>
-
+        <!--If Yes to above, Modal closes and JQuery takes you to Locator Map-->
         <!--If No:-->
         <div id="question-2">
             <div class="modal-body">
@@ -192,44 +196,38 @@
                 <button id="2-no" class="blue-button">No</button>
             </div>
         </div>
-
         <!--If 2-yes:-->
         <div id="link-to-contact">
             <div class="modal-body">
                     <p>Brilliant! Then just click below to go to out contact page.</p>
             </div>
             <div class="modal-footer">
-                <button id="contact" class="blue-button" onclick="window.location.href='contact-us.html'">Contact Page</button>
+                <button id="contact" class="blue-button" onclick="window.location.href='contact-us.html'">Contact Page</button> 
+                <!--takes viewer to contact-us.html, until VERY late on, this took viewer to contact page theough an <a> element inside the button, this was changed when HTML validator said <a> can't be child of a button.
+                Found Javascript solution here - https://stackoverflow.com/questions/2906582/how-to-create-an-html-button-that-acts-like-a-link-->
             </div>
         </div>
-
         <!--If 2-no:-->
         <div id="sorry">
             <div class="modal-body">
                     <p>Oh. Well then I'm not really sure what else I can do for you. I've kind of only got the one trick, sorry.</p>
-                    <p>If change your midn though and decide you absolutley <em>must</em> find a coffee shop, feel free to click below and we can get you sorted.</p>
+                    <p>If change your ming though, feel free to click below and we can get you sorted.</p>
             </div>
             <div class="modal-footer">
-                <button id="restart" class="blue-button">I've changed my mind</button>
+                <button id="restart" class="blue-button">I've changed my mind</button> <!--Takes viewer back to the start of 'questionnaire'-->
             </div>
         </div>   
         </div>
     </div>
-    </div>
-
- 
+    </div> 
     <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
     <script src="assets/js/jq-questionnaire.js"></script> 
     <script src="assets/js/locator.js"></script> 
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
     <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhbDsQXYC_ktxy2PrkYj7d2k-KhGxgMi4&callback=initMap&libraries=places&v=weekly"
       defer
     ></script>
-
-
-
 </body>
 </html>
